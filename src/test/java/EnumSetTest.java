@@ -20,6 +20,15 @@ public class EnumSetTest {
     }
 
     @Test
+    public void allOf_notImmutable() {
+        EnumSet<DayOfWeek> dayOfWeeks = EnumSet.allOf(DayOfWeek.class);
+
+        dayOfWeeks.clear();
+
+        assertTrue(dayOfWeeks.isEmpty());
+    }
+
+    @Test
     public void complementOf() {
         EnumSet<DayOfWeek> withoutWeekendDays = EnumSet.complementOf(
                 EnumSet.of(DayOfWeek.SATURDAY, DayOfWeek.SUNDAY)
@@ -36,6 +45,17 @@ public class EnumSetTest {
     }
 
     @Test
+    public void complementOf_notImmutable() {
+        EnumSet<DayOfWeek> withoutWeekendDays = EnumSet.complementOf(
+                EnumSet.of(DayOfWeek.SATURDAY, DayOfWeek.SUNDAY)
+        );
+
+        withoutWeekendDays.clear();
+        
+        assertTrue(withoutWeekendDays.isEmpty());
+    }
+
+    @Test
     public void range() {
         EnumSet<DayOfWeek> workingDays = EnumSet.range(DayOfWeek.MONDAY, DayOfWeek.FRIDAY);
 
@@ -47,6 +67,15 @@ public class EnumSetTest {
                 DayOfWeek.THURSDAY,
                 DayOfWeek.FRIDAY)
         );
+    }
+
+    @Test
+    public void range_notImmutable() {
+        EnumSet<DayOfWeek> workingDays = EnumSet.range(DayOfWeek.MONDAY, DayOfWeek.FRIDAY);
+
+        workingDays.clear();
+
+        assertTrue(workingDays.isEmpty());
     }
 
     @Test
