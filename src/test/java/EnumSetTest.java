@@ -54,5 +54,9 @@ public class EnumSetTest {
         EnumSet<DayOfWeek> emptyDays = EnumSet.noneOf(DayOfWeek.class);
 
         assertTrue(emptyDays.isEmpty());
+
+        emptyDays.add(DayOfWeek.SATURDAY);
+        
+        assertThat(emptyDays, contains(DayOfWeek.SATURDAY));
     }
 }
