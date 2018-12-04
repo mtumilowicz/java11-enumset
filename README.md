@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/mtumilowicz/java11-enumset.svg?branch=master)](https://travis-ci.com/mtumilowicz/java11-enumset)
+
 # java11-enumset
 Overview of `EnumSet` API.
 
