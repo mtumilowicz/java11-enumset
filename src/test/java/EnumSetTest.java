@@ -17,6 +17,15 @@ public class EnumSetTest {
         EnumSet<DayOfWeek> dayOfWeeks = EnumSet.allOf(DayOfWeek.class);
 
         assertThat(dayOfWeeks.size(), is(7));
+        assertThat(dayOfWeeks, contains(
+                DayOfWeek.MONDAY,
+                DayOfWeek.TUESDAY,
+                DayOfWeek.WEDNESDAY,
+                DayOfWeek.THURSDAY,
+                DayOfWeek.FRIDAY,
+                DayOfWeek.SATURDAY,
+                DayOfWeek.SUNDAY)
+        );
     }
 
     @Test
